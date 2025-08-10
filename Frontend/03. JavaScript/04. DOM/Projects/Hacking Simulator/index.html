@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Simulator</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-size: 1.2rem;
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-style: normal;
+            padding: 20px;
+        }
+
+        .blinking {
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-weight: 200;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a hacking simulator which has green background and it shows these message with 
+    random delay of 1 to 7 seconds
+
+    Initializing Hacking....
+    Reading your Files.... 
+    Password files Detected....
+    Sending all the passwords and personal  files to server....
+
+    The three dots must blink so that it looks like a real Terminal. -->
+
+    <!-- <div class="container">
+        <h2 class="firstMessage">
+            Initializing Hacking<span>.....</span>
+        </h2>
+        <h2 class="secondMessage">
+            Reading your Files<span>.....</span>
+        </h2>
+        <h2 class="thirdMessage">
+            Password files Detected<span>.....</span>
+        </h2>
+        <h2 class="lastMessage">
+            Sending all the passwords and personal  files to server<span>.....</span>
+        </h2>
+    </div> -->
+
+    <!-- <div id="terminal"></div> -->
+    <div id="terminal">System is Hacking....</div>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="practice.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.first_img {
+    align-content: center;
+}
+
+h2 {
+    color: #2a4478;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: orange underline wavy;
+    letter-spacing: 7px;
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+.heading_para {
+    color: #2a786e;
+    font-weight: 600;
+    /* text-align: center; */
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: palevioletred;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+h4 {
+    color: #2a786e;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration: orange overline wavy;
+    /* text-decoration: orange line-through ; */
+    letter-spacing: 1 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.para {
+    color: #2a4478;
+    font-weight: 400;
+    font-size: 19px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* fon font-family: segoe ui text-align: center; */
+    line-height: 1.56;
+}

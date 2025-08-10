@@ -1,0 +1,30 @@
+body {
+    /* background-color: #2b2d42; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    height: 100vh;
+    background-color: #151b29;
+}
+
+button {
+    background-color: #151b29;
+    color: #ff7d00;
+    border: 2px solid;
+    text-align: center;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    margin-top: 90%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+button:hover {
+    border: 2px solid #f1ff5c;
+    color: #f1ff5c;
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    color: #f1ff5c;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}

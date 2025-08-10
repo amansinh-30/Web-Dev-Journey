@@ -1,0 +1,139 @@
+* {
+    background-color: rgb(43, 57, 109);
+    color: white;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: olive;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 34px;
+}
+
+.form_class {
+    text-align: center;
+}
+
+#username,
+#password,
+#number {
+    background-color: rgb(255, 243, 221);
+    border-radius: 14px;
+    padding-left: 14px;
+    height: 25px;
+    width: 200px;
+}
+
+.buttons {
+    background-color: #ee964b;
+    border-radius: 14px;
+    height: 30px;
+}
+
+.buttons:hover {
+    background-color: olivedrab;
+}
+
+#regular_button {
+    background-color: #d4a373;
+    color: #000;
+    border-radius: 14px;
+    height: 30px;
+}
+
+.nbutton {
+    background-color: #e63946;
+    border-radius: 14px;
+    height: 30px;
+    width: 170px;
+}
+
+#color {
+    border-radius: 9px;
+    width: 70px;
+}
+
+h2 {
+    color: #81b29a;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    text-decoration: #e63946 line-through;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.search_area {
+    text-align: center;
+}
+
+h4 {
+    color: #eff6e0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.search_button {
+    border-radius: 7px;
+    height: 34px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-color: #eff6e0;
+}
+
+#search_input {
+    border-color: #eff6e0;
+    height: 24px;
+    border-radius: 9px;
+    width: 240px;
+}
+
+h1 {
+    color: #ffc300;
+    letter-spacing: 2px;
+    font-family: fantasy;
+    font-weight: 200;
+    text-decoration: #f1c0e8 underline wavy;
+}
+
+.more_form {
+    letter-spacing: 1px;
+    font-family: cursive
+}
+
+label {
+    color: #ffd670;
+    font-weight: 400;
+
+}
+
+#questions {
+    color: #ffd670;
+    font-weight: 400;
+}
+
+#country {
+    border-radius: 4px;
+    height: 20px;
+    color: #ee964b;
+}
+
+#experince {
+    color: #e63946;
+}
+
+#feedback {
+    border-color: #ffd670;
+}
+
+.submit {
+    background-color: #81b29a;
+    height: 30px;
+    width: 100px;
+    border-radius: 18px;
+}
+
+.submit:hover {
+    background-color: #e63946;
+}

@@ -1,0 +1,1 @@
+'Amanada'.greet()

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hacking Simulator</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2em;
+            padding: 20px;
+        }
+
+        .blinking {
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="terminal"></div>
+
+    <script>
+        const messages = [
+            "Initializing Hacking",
+            "Reading your Files",
+            "Password files Detected",
+            "Sending all the passwords and personal files to server"
+        ];
+
+        const terminal = document.getElementById("terminal");
+
+        let index = 0;
+
+        function showNextMessage() {
+            if (index >= messages.length) return;
+
+            const messageText = messages[index];
+            const messageElement = document.createElement("div");
+
+            messageElement.textContent = messageText;
+            const dots = document.createElement("span");
+            dots.className = "blinking";
+            dots.textContent = "....";
+
+            messageElement.appendChild(dots);
+            terminal.appendChild(messageElement);
+
+            const delay = Math.floor(Math.random() * 7000) + 1000;
+
+            setTimeout(() => {
+                dots.classList.remove("blinking");
+                index++;
+                showNextMessage();
+            }, delay);
+        }
+
+        showNextMessage();
+    </script>
+</body>
+
+</html>

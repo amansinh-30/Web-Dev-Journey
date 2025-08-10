@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="img">
+                <img src="https://cordcuttersnews.com/wp-content/uploads/2023/09/iStock-1461641993.jpg" alt="">
+                <p class="imgDesc">Ping Pong Score Tracker</p>
+            </div>
+            <div class="playground">
+                <h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
+                <p class="buttonDesc">Use the buttons below to keep score</p>
+                <div class="playto">
+                    <label for="Playto">Playing To</label>
+                    <select name="" id="playto">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+                <div class="buttonArea">
+                    <button id="p1Button">+1 Player One</button>
+                    <button id="p2Button">+1 Player Two</button>
+                    <button id="reset">Rest</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

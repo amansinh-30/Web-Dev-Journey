@@ -1,0 +1,22 @@
+body {
+    color: purple;
+}
+
+/* 
+h1 {
+    color: blue;
+} */
+
+section {
+    color: teal;
+}
+
+form {
+    color: #e63946;
+}
+
+button {
+    color: inherit;
+    background-color: lightskyblue;
+    border-radius: 7px;
+}

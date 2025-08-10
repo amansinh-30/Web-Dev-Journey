@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <ul>
+        <!-- <form> is use to take a "action" to drive the direction on any form part and take through furter action -->
+        <form class="form_class" action="/Welcome to Techby-Amax">
+            <h3>Form Elements</h3>
+            <p>
+                <label for="username">Enter a Username:</label>
+                <input id='username' type="text" placeholder="username" name="name">
+            </p>
+            <!-- BOTH ARE THE VALID WAYS -->
+            <p>
+                <label>Eneter a Password:
+                    <input type="password" id="password" placeholder="password" name="password"></label>
+            </p>
+            <button class="buttons">In The Middle</button>
+            <p>
+                <label for="color">Choose a Colour:</label>
+                <input id='color' type="color" name="color">
+            </p>
+            <p>
+                <label>Choose a Number:
+                    <input type="number" id="number" placeholder="enter a number" name="num"></label>
+            </p>
+            <button id="regular_button" type="button">Regular Button (won't submit)</button>
+            <!-- <button type="submit">Submit!!</button> -->
+            <!-- Create a button with single line with submit: -->
+            <input type="submit" class="buttons" search_input"buttons" value="Click Me!">
+            </p>
+        </form>
+        <hr>
+        <button class="nbutton">Not Insdie Submit</button>
+        <div class="more_input">
+            <p>
+            <h1>More Inputs</h4>
+                <div class="more_form">
+                    <form action="https://coolors.co/palettes/trending">
+                        <input type="checkbox" name="task1" id="task1">
+                        <label for="task1"> Morning Task</label>
+                        </p>
+                        <p>
+                            <li id="questions">Which Programming language is use for 'Web Page Styling'?</li>
+                            <input type="radio" name="right" id="html" value="html" required>
+                            <label for="html">HTML</label>
+                            <input type="radio" name="right" id="css" value="css">
+                            <label for="css">CSS</label>
+                            <input type="radio" name="right" id="python" value="python">
+                            <label for="python">Python</label>
+                            <input type="radio" name="right" id="javascript" value="javascript">
+                            <label for="javascript">JavaScript</label>
+                        </p>
+                        <p>
+                            <li id="questions">What is best language to learn?</li>
+                            <input type="radio" name="normal_language" id="python" value="python" required>
+                            <label for="python">Python</label>
+                            <input type="radio" name="normal_language" id="java" value="java">
+                            <label for="Java">Java</label>
+                            <input type="radio" name="normal_language" id="french" value="french">
+                            <label for="french">French</label>
+                            <input type="radio" name="normal_language" id="englih" value="englih">
+                            <label for="englih">Englih</label>
+                        </p>
+                        <p>
+                            <label for="country">Choose Country</label>
+                            <select name="country" id="country">
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="" selected>Please Select Your Country</option>
+                                <!-- PRE SELECT FOR USE "selected" -->
+                                <option value="Canda">Canada</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="UK">UK</option>
+                                <option value="Switzerland">Switzerland</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="experince">
+                                <li id="questions">How's your experince with range function?</li>
+                                <p id="questions"> Share Your Exeperince
+                            </label>
+                            <input type="range" name="experince" id="experince" min="1" max="70" step="5">
+                        </p>
+                        </p>
+                        <p>
+                            <li>
+                                <label for="feedback" id="questions">Your feedback really help us to improve our
+                                    growth</label>
+                            </li>
+                            <textarea id="feedback" rows="5" cols="40" name="feedback?"
+                                placeholder="Please share your feedback..."></textarea>
+                        </p>
+                        <form action="/day.html">
+                            <button class="submit">Submit</button>
+                        </form>
+                    </form>
+                </div>
+                <hr>
+                <h2>Hijacking Searches</h2>
+                <div class="search_area">
+                    <p>
+                    <h4>Search Google</h4>
+                    <form action="https://www.google.com/search">
+                        <input id="search_input" type="text" name="q">
+                        <button class="search_button">Search Google</button>
+                    </form>
+                    </p>
+                    <p>
+                    <h4>Search Reddit</h4>
+                    <form action="https://www.reddit.com/search">
+                        <input id="search_input" type="text" name="q">
+                        <button class="search_button">Search Reddit</button>
+                    </form>
+                    </p>
+                    <p>
+                    <h4>Search YouTube</h4>
+                    <form action="https://www.youtube.com/results">
+                        <input id="search_input" type="text" name="search_query">
+                        <button class="search_button">Search YouTube</button>
+                    </form>
+                    </p>
+                </div>
+        </div>
+    </ul>
+</body>
+
+</html>
