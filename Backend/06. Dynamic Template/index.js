@@ -1,21 +1,31 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-const port = 3000;
+const path = require("path");
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+// calling 'ejs' files
+app.set("view engine", "ejs");
+app.set("views", [
+  path.join(__dirname, "practice"),
+  path.join(__dirname, "/views"),
+]);
 
-app.get('/', (req, res) => {
-    // res.send('HELLO, BACKEND DEVELOPER. HERE, YOUR GET REQUEST!')
-    res.render('home')
-})
+// use 'Get Request' to show users after selecting items.
+app
+  .get("/", (req, res) => {
+    // res.send('HELLO, BACKEND DEVELOPER. HERE, YOUR GET REQUEST!')      // use 'send' to print "string"
+    res.render("home"); // get ejs file
+  })
+  .get("/random", (req, res) => {
+    res.render("random"); // get ejs file
+  });
 
-app.get('/random', (req, res) => {
-    const num = Math.floor(Math.random() * 10) + 1
-    res.render('random', { num })
-})
+// To get value for each items after '/:'
+app.get("/:values", (req, res) => {
+  const values = req.params; // use 'params' to get value
+  res.render("value", values); // get ejs file
+});
 
-app.listen(port, () => {
-    console.log(`EXAMPLE IS LISTENING PORT: ${port}`);
-})
+// Port calling
+app.listen(3000, () => {
+  console.log(`EXAMPLE IS LISTENING PORT: 3000`);
+});
