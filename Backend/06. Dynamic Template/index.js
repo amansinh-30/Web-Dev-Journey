@@ -19,6 +19,12 @@ app
     res.render("random"); // get ejs file
   });
 
+  // Create an Array and take OUTPUT in HTML 
+  app.get('/cars', (req, res) =>{
+    const cars = ['BMW', 'Lamborghini', 'Aston Martin', 'McLaren', 'Porsche', 'Ferrari'] 
+    res.render('car', {cars})
+  })
+
 // To get value for each items after '/:'
 app.get("/:values", (req, res) => {
   const values = req.params; // use 'params' to get value

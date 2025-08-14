@@ -8,8 +8,22 @@
 </head>
 
 <body>
-    <h1>Your Random Number: <%= Math.floor(Math.random() * 20) + 1%>
-    </h1>
+
+    <!-------------- Only use this <%  %> for Javascript code this's not a OUTPUT  -->
+    <!-------------- Only use this <%=  %> for HTML code this's for OUTPUT  -->
+
+    <% let randomNum=Math.floor(Math.random() * 50 ) + 1 %>
+
+    <h1>Random Number is: <%= randomNum %></h1>
+
+    <% if (randomNum % 2===0){ %>
+    <h4>This is an EVEN number!</h4>
+    <% } else { %>
+    <h4>This is an ODD number!</h4>
+    <% } %>
+
+    <h4>This number is: <%= randomNum%2===0 ? 'EVEN' : 'ODD' %></h4>
+
 </body>
 
 </html>
