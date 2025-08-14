@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    
+
+    <h4>
+        <%= description %>
+    </h4>
+    <p>Total Subscribers <%= subscribers %>
+    </p>
+    <hr>
+
+    <% for(let post of posts){ %>
+        <article>
+            <p>
+                <%= post.title %> - <b>
+                        <b>
+                            <%= post.author.toUpperCase() %>
+                        </b>
+            </p>
+            <% if(post.img){ %>
+                <img src="<%= post.img %>" alt="">
+                <% } %>
+        </article>
+        <% } %>
+</body>
+
+</html>
