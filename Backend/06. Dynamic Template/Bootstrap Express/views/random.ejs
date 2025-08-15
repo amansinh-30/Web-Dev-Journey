@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- import file for head -->
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random</title>
-</head>
+    <!-- import file for navbar -->
+    <%- include('partials/navbar') %>
 
-<body>
+        <!-- Only use this <%  %> for Javascript code this's not a OUTPUT  -->
+        <!-- Only use this <%=  %> for HTML code this's for OUTPUT  -->
+        <div class="container">
+            <% let randomNum=Math.floor(Math.random() * 50 ) + 1 %>
 
-    <!-- Only use this <%  %> for Javascript code this's not a OUTPUT  -->
-    <!-- Only use this <%=  %> for HTML code this's for OUTPUT  -->
+                <h1>Random Number is: <%= randomNum %>
+                </h1>
 
-    <% let randomNum=Math.floor(Math.random() * 50 ) + 1 %>
+                <% if (randomNum % 2===0){ %>
+                    <h4>This is an EVEN number!</h4>
+                    <% } else { %>
+                        <h4>This is an ODD number!</h4>
+                        <% } %>
 
-    <h1>Random Number is: <%= randomNum %></h1>
-
-    <% if (randomNum % 2===0){ %>
-    <h4>This is an EVEN number!</h4>
-    <% } else { %>
-    <h4>This is an ODD number!</h4>
-    <% } %>
-
-    <h4>This number is: <%= randomNum%2===0 ? 'EVEN' : 'ODD' %></h4>
-
-</body>
-
-</html>
+                            <h4>This number is: <%= randomNum%2===0 ? 'EVEN' : 'ODD' %>
+                            </h4>
+        </div>
+        <%- include('partials/footer') %>

@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars Company List</title>
-</head>
+    <%- include('partials/navbar') %>
 
-<body>
+        <div class="container">
+            <h2>Top Car Companies in The World</h2>
 
-    <h2>Top Car Companies in The World</h2>
+            <!-- Create a loop to get Array from JS -->
+            <ul>
+                <% for(let car of cars){ %>
+                    <li>
+                        <%= car %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
 
-    <!-- Create a loop to get Array from JS -->
-    <ul>
-        <% for(let car of cars){ %>
-        <li>
-            <%= car %>
-        </li>
-        <% } %>
-    </ul>
-</body>
-
-</html>
+        <%- include('partials/footer') %>
