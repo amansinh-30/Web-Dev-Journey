@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const igData = require("./data.json");
 
-// import css and js file from public folder 
+// import css and js file from public folder
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
