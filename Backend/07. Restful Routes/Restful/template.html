@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTful</title>
+    <style>
+        form {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            margin-top: 15rem;
+            margin-left: 20px;
+            width: 25rem;
+
+            text-align: center;
+            border: 1px solid palevioletred;
+        }
+
+        button {
+            padding: 7px 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: cadetblue;
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+                    a {
+                        text-decoration: none;
+                    }
+
+        #comment {
+            display: flex;
+            text-align: center;
+            background-color: cornflowerblue;
+            color: #fff;
+            margin-left: 40rem;
+            margin-top: 8rem;
+            /* text-decoration: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/submit" method="get">
+            <h2>This is for GET REQUEST</h2>
+            <h4>Full name:
+                <input type="text" name="fullName" id="">
+            </h4>
+            <h4>Age:
+                <input type="number" name="age" id="">
+            </h4>
+            <button>Submit</button>
+        </form>
+
+        <form action="/submit" method="post">
+            <h2>This is for POST REQUEST</h2>
+            <h4>Full name:
+                <input type="text" name="fullName" id="">
+            </h4>
+            <h4>Age:
+                <input type="number" name="age" id="">
+            </h4>
+            <button>Submit</button>
+        </form>
+
+    </div>
+    <a href="/comment">
+        <button id="comment" onclick="commentList()">Comments</button>
+    </a>
+    <script src="index.js"></script>
+</body>
+
+</html>

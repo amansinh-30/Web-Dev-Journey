@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments Index</title>
+</head>
+
+<body>
+
+    <h4>Comments</h4>
+    <ul>
+        <% for(let c of comments){ %>
+            <li>
+                <%= c.comments %> -<b>
+                        <%= c.username %>
+                    </b>
+            </li>
+            <% } %>
+    </ul>
+
+    <!-- <ul>
+                <% for(const comment of comments) {%>
+                    <li>
+                        <% for (const key in comment) {%>
+                            <strong>
+                                <%= key %>
+                            </strong>: <%= comment[key] %> <br>
+                                <% } %>
+                    </li>
+                    <% } %>
+            </ul> -->
+
+</body>
+
+</html>

@@ -5,6 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
+  res.render("index"  );
   res.send("This is a GET Request.");
 });
 
