@@ -57,11 +57,11 @@ This directory focuses on core Node.js concepts, server fundamentals, and practi
 
 ## 🎯 Learning Goals
 
-✅ Understand Node.js core concepts and architecture  
-✅ Use built-in modules and create basic servers  
-✅ Work with file systems and asynchronous patterns  
-✅ Manage packages with npm  
-✅ Prepare for backend frameworks like Express.js
+-  Understand Node.js core concepts and architecture  
+-  Use built-in modules and create basic servers  
+-  Work with file systems and asynchronous patterns  
+-  Manage packages with npm  
+-  Prepare for backend frameworks like Express.js
 
 ---
 

@@ -130,11 +130,11 @@ res.status(404).send("Not found");
 
 ### 🎯 Learning Goals
 
-- ✅ Set up and run an Express.js server
-- ✅ Understand routing and middleware flow
-- ✅ Build and organize RESTful API endpoints
-- ✅ Use request/response methods efficiently
-- ✅ Serve static files using Express
+- Set up and run an Express.js server
+- Understand routing and middleware flow
+- Build and organize RESTful API endpoints
+- Use request/response methods efficiently
+- Serve static files using Express
 
 ---
 
