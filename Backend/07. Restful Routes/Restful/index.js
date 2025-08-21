@@ -55,21 +55,21 @@ app.post("/submit", (req, res) => {
 });
 
 // Get comment input from Array
-app.get("/comments", (req, res) => {
+app.get("/comment", (req, res) => {
   res.render("index", { comments });
 });
 
 // Get new comment data from new ejs file
-app.get("/comments/new", (req, res) => {
+app.get("/comment/new", (req, res) => {
   res.render("new");
 });
 
 // Get new comment data with 'POST REQUEST'
 app.post("/comments", (req, res) => {
-  // console.log(req.body);
   const { username, comment } = req.body;
   comments.push({ username, comment });
-  res.send("YES, IT SUBMITTED!");
+  // res.send("YES, IT SUBMITTED!");
+  res.redirect("/comment"); // use "res.redirect('location')" to go to that page.
 });
 
 // if error found "404"
