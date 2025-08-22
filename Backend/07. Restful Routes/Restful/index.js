@@ -9,6 +9,8 @@ DELETE / comments/:id - Distroy one comment
 const express = require("express");
 const app = express();
 const path = require("path");
+const { v4: uuid } = require("uuid");
+uuid();
 
 // get html files
 app.use(express.urlencoded({ extended: true }));
@@ -21,18 +23,23 @@ app.set("views", path.join(__dirname, "comments"));
 // create an Array
 const comments = [
   {
+    // id: uuid(),
+    id: "cfd11806-5333-4096-8ea7-a3aa1e803330",
     username: "Jack",
     comment: "lol that is so funny",
   },
   {
+    id: uuid(),
     username: "Apex",
     comment: "I just need a break and travel somewhare else",
   },
   {
+    id: uuid(),
     username: "Amanada",
     comment: "I am going to beach this weekend",
   },
   {
+    id: uuid(),
     username: "Julia",
     comment: "My weekend would be hactic",
   },
@@ -67,9 +74,29 @@ app.get("/comment/new", (req, res) => {
 // Get new comment data with 'POST REQUEST'
 app.post("/comments", (req, res) => {
   const { username, comment } = req.body;
-  comments.push({ username, comment });
-  // res.send("YES, IT SUBMITTED!");
+  comments.push({ username, comment, id: uuid() });
   res.redirect("/comment"); // use "res.redirect('location')" to go to that page.
+});
+
+// Find new id
+app.get("/comment/:id", (req, res) => {
+  const { id } = req.params;
+  const comment = comments.find((c) => c.id === id);
+  res.render("show", { comment });
+});
+
+// For 'UPDATE' or Edit new comment/page/section use "patch"
+app.patch("/comment/:id", (req, res) => {
+  const { id } = req.params;
+  const newCommentText = req.body.comment;
+  const foundComment = comments.find((c) => c.id === id);
+  foundComment.comment = newCommentText;
+  res.redirect("/comment");
+});
+
+// Debug route: View raw comments and IDs
+app.get("/comment/json", (req, res) => {
+  res.json(comments);
 });
 
 // if error found "404"
