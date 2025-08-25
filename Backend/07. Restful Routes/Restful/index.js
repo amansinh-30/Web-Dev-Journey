@@ -9,6 +9,7 @@ DELETE / comments/:id - Distroy one comment
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 const { v4: uuid } = require("uuid");
 uuid();
 
@@ -16,12 +17,15 @@ uuid();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Get update the comment using "Method Override" module.
+app.use(methodOverride("_method"));
+
 // get ejs files
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "comments"));
 
 // create an Array
-const comments = [
+let comments = [
   {
     // id: uuid(),
     id: "cfd11806-5333-4096-8ea7-a3aa1e803330",
@@ -82,7 +86,18 @@ app.post("/comments", (req, res) => {
 app.get("/comment/:id", (req, res) => {
   const { id } = req.params;
   const comment = comments.find((c) => c.id === id);
+
+  // if (!comment) {
+  //   return res.status(404).send("Comment not found");
+  // }
   res.render("show", { comment });
+});
+
+// For Edit a comment
+app.get("/comment/:id/edit", (req, res) => {
+  const { id } = req.params;
+  const comment = comments.find((c) => c.id === id);
+  res.render("edit", { comment });
 });
 
 // For 'UPDATE' or Edit new comment/page/section use "patch"
@@ -91,6 +106,13 @@ app.patch("/comment/:id", (req, res) => {
   const newCommentText = req.body.comment;
   const foundComment = comments.find((c) => c.id === id);
   foundComment.comment = newCommentText;
+  res.redirect("/comment");
+});
+
+// For "Delete" the comment
+app.delete("/comment/:id", (req, res) => {
+  const { id } = req.params;
+  comments = comments.filter((c) => c.id !== id);
   res.redirect("/comment");
 });
 

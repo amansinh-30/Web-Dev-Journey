@@ -8,14 +8,21 @@
 </head>
 
 <body>
-    <h2>Comment id: <%= comment.id %>
-    </h2>
-    <h4>
-        <%= comment.comment %> - <b>
-                <%= comment.username %>
-            </b>
-    </h4>
-    <a href="/comment">Back to Index</a>
+    <div class="comment">
+        <h2>Comment id: <%= comment.id %>
+        </h2>
+        <h4>
+            <%= comment.comment %> - <b>
+                    <%= comment.username %>
+                </b>
+        </h4>
+        <a href="/comment">Back to Index</a>
+    </div>
+    <a href="/comment/<%= comment.id %>/edit">Edit Comment</a>
+
+    <form action="/comment/<%= comment.id %>?_method=delete" method="post">
+        <button>DELETE</button>
+    </form>
 
 </body>
 
