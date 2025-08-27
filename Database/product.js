@@ -54,7 +54,7 @@ const productSchema = new mongoose.Schema({
   console.log(`- from ${this.name}`);
 };*/
 
-// Set "Own Method" for sales on particular product
+// ======= Set "Own Method" for sales on 'Particular Product' =======
 productSchema.methods.toggleOnSale = function () {
   this.onSale = !this.onSale;
   this.save();
