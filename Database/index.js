@@ -1,3 +1,4 @@
+// =============== Connect with Mongoose ===============
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://127.0.0.1:27017/carsCollection");
 // .then(()=>{
@@ -7,6 +8,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/carsCollection");
 //     console.log('OH NO ERROR!!!!');
 //     console.log(err);
 // })
+
+// =============== 'async function' to check the "error" ===============
 main().catch((err) => console.log(err));
 
 async function main() {
@@ -22,7 +25,11 @@ const carSchema = new mongoose.Schema({
   horsePower: String,
 });
 
+// =============== Add Data ===============
+// ("collection_name", "Database_name")
 const Car = mongoose.model("exotic_car", carSchema);
+
+// =============== Insert Single Item ===============
 // const Cadillac = new Car({
 //   name: "Cadillac",
 //   model: "Escalade ESV",
@@ -30,11 +37,10 @@ const Car = mongoose.model("exotic_car", carSchema);
 //   horsePower: " 682 hp",
 // });
 
+// =============== Insert Many Items ===============
 // Car.insertMany([
 //   { name: "Lamborghini", model: "Urus", year: 2022, horsePower: "650 hp" },
 //   { name: "Aston Martin", model: "DBX", year: 2020, horsePower: "542 hp" },
 //   { name: "Porsche", model: "Cayenne", year: 2021, horsePower: "541 hp" },
 //   { name: "Rolls-Royce ", model: "Cullinan", year: 2023, horsePower: "563 hp" },
 // ]);
-
-
