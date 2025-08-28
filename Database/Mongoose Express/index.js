@@ -45,12 +45,14 @@ app.get("/product/new", (req, res) => {
   res.render("new", { categories });
 });
 
+// After adding new product post request via "_id" 
 app.post("/product", async (req, res) => {
   const newProduct = new Product(req.body);
   await newProduct.save();
   res.redirect(`/product/${newProduct._id}`);
 });
 
+// Get particular product page via "_id"
 app.get("/product/:id", async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id);
@@ -58,12 +60,14 @@ app.get("/product/:id", async (req, res) => {
   res.render("show", { product });
 });
 
+// Edit particular product page via "_id" 
 app.get("/product/:id/edit", async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id);
   res.render("edit", { product, categories });
 });
 
+// Update particular product via "_id"
 app.put("/product/:id", async (req, res) => {
   const { id } = req.params;
   const product = await Product.findByIdAndUpdate(id, req.body, {
@@ -73,11 +77,14 @@ app.put("/product/:id", async (req, res) => {
   res.redirect(`/product/${product._id}`);
 });
 
+// Delete particular product via "_id"
 app.delete("/product/:id", async (req, res) => {
   const { id } = req.params;
   const deleteProduct = await Product.findByIdAndDelete(id);
   res.redirect("/product");
 });
+
+// ============ Listen Port ============
 app.listen(8080, () => {
   console.log("Express Listening Port:8080");
 });
