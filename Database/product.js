@@ -48,7 +48,19 @@ const productSchema = new mongoose.Schema({
 });
 
 // =============== Instance Methods ===============
+// Define a schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phoneNumber: Number,
+});
 
+// Or, assign a function to the "methods" object of our userSchema
+userSchema.methods.getFullName = function () {
+  return `${this.name} (${this.email})`;
+};
+
+// =============== xxxxxxxxxxxxxx ===============
 /*productSchema.methods.greet = function () {
   console.log("HEY, HELLO, HOW R U?");
   console.log(`- from ${this.name}`);
@@ -67,6 +79,11 @@ productSchema.methods.addCategory = function (newCat) {
   return this.save;
 };
 
+// ============== Static Method ==============
+productSchema.statics.fireSale = function () {
+  return this.updateMany({}, { onSale: true, price: 0 });
+};
+
 // =========== Add product according to the "Schema" ===========
 const Product = mongoose.model("Product", productSchema);
 
@@ -78,16 +95,20 @@ const findProduct = async () => {
   await foundProduct.addCategory("Outdoor");
   console.log(foundProduct);
 
-  /*if (foundProduct) {
+  /*
+  if (foundProduct) {
     foundProduct.greet();
   } else {
     console.log("Product not found.");
-  }*/
+  }
+  */
 };
-
 findProduct();
 
-/*
+// =========== For Statics Method ===========
+Product.fireSale().then((res) => console.log(res));
+
+// /*
 // =========== Add 'Products' manually ===========
 const jacket = new Product({
   name: "Bike Jacket",
@@ -105,10 +126,10 @@ jacket
     console.log("Ohh No, It's an ERROR!!!!!");
     console.log(err.errors?.name?.properties?.message || err);
   });
-*/
+// */
 
-/*
-// ======= To run  "Negative" value. need to add 'runValidators' =======
+// /*
+// ======= To run "Negative" value. need to add 'runValidators' =======
 Product.findOneAndUpdate(
   { name: "Tire Air Pump" },
   { price: -20.2 },
@@ -131,4 +152,4 @@ Product.findOneAndUpdate(
       console.log(err);
     }
   });
-*/
+// */
