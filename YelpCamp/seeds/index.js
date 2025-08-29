@@ -18,12 +18,10 @@ db.once("open", () => {
   console.log("Database Connected!!");
 });
 
-const sample = (array) => array[Math.floor(Math.random() * array.length)];
+const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
   await Campground.deleteMany({});
-  //   const c = new Campground({ title: "purple field" });
-  //   await c.save();
   for (let i = 1; i < 50; i++) {
     const randomIndex = Math.floor(Math.random() * 500);
     const camp = new Campground({
