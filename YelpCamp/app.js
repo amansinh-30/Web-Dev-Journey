@@ -1,4 +1,4 @@
-// =============== Exporting Modules ===============
+// =============== Import Modules ===============
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -20,20 +20,22 @@ db.once("open", () => {
   console.log("Database Connected!!");
 });
 
-// =============== Get 'ejs' Templates ===============
+// =============== Get "ejs" Templates ===============
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// =============== 'Home Page' for "get request" ===============
+// =============== "Home Page" ===============
 app.get("/", (req, res) => {
   res.render("home");
 });
 
+// =============== "campground Page" ===============
 app.get("/campground", async (req, res) => {
   const campgrounds = await Campground.find({});
   res.render("campgrounds/index", { campgrounds });
 });
 
+// =============== "campground particular location" ===============
 app.get("/campground/:id", async (req, res) => {
   const campground = await Campground.findById(req.params.id);
   res.render("show", { campground });
@@ -50,6 +52,7 @@ app.get("/makecampground", async (req, res) => {
 });
 */
 
+// =============== Listen Port ===============
 app.listen(3000, () => {
   console.log("Server Login Port:3000");
 });
